@@ -1,0 +1,132 @@
+<div class="file-upload-container">
+
+  <ng-container #flow="flow"
+    [flowConfig]="flowConfig">
+  </ng-container>
+
+  <div class="drop-area"
+       flowDrop
+       [flow]="uploadInstance?.flow.flowJs"
+       [ngClass]="{ 'hide-droparea-text': hideDropAreaText, 'highlight': filesDragged }"
+       (dragover)="filesDragged = true"
+       (dragleave)="filesDragged = false"
+       (drop)="filesDragged = false">
+
+    <div class="fud-drop-content">
+      <div>
+        <svg height="50px" version="1.1" viewBox="0 0 32 32" width="50px">
+          <g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1">
+            <g fill="#929292" id="icon-130-cloud-upload">
+              <path d="M17,22 L25.0005601,22 C27.7616745,22 30,19.7558048 30,17 C30,14.9035809 28.7132907,13.1085075 26.8828633,12.3655101 L26.8828633,12.3655101 C26.3600217,9.87224935 24.1486546,8 21.5,8 C20.6371017,8 19.8206159,8.19871575 19.0938083,8.55288165 C17.8911816,6.43144875 15.6127573,5 13,5 C9.13400656,5 6,8.13400656 6,12 C6,12.1381509 6.00400207,12.275367 6.01189661,12.4115388 L6.01189661,12.4115388 C4.23965876,13.1816085 3,14.9491311 3,17 C3,19.7614237 5.23249418,22 7.99943992,22 L16,22 L16,16 L12.75,19.25 L12,18.5 L16.5,14 L21,18.5 L20.25,19.25 L17,16 L17,22 L17,22 Z M16,22 L16,27 L17,27 L17,22 L16,22 L16,22 Z" id="cloud-upload"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <div class="fud-drop-text">
+        <!-- <i class="material-icons">cloud</i> -->
+        <span>Drag & Drop Files Here</span>
+      </div>
+
+      <div class="fud-or">(or)</div>
+
+      <div class="fud-browse-button">
+        <button class="primary md" (click)="bpfileupload.click()">Browse Files</button>
+
+        <input #bpfileupload
+               type="file"
+               flowButton
+               [flow]="uploadInstance?.flow.flowJs"
+               [flowAttributes]="flowConfig.acceptedFileTypes"
+               [multiple]="!flowConfig.singleFile">
+      </div>
+    </div>
+
+    <div class="fud-files-content">
+      <div class="fud-action-bar">
+        <label>FILE(S) SELECTED:</label>
+
+        <button class="secondary md bp-btn-dropdown"
+                [disabled]="(uploadInstance?.flow.transfers$ | async)?.transfers.length <= 0"
+                [matMenuTriggerFor]="clearMenu">
+          Clear
+          <span >ICON Caret</span>
+
+          <mat-menu #clearMenu="matMenu">
+            <button mat-menu-item class="fud-grid-menu-item">
+              <span>Clear Uploaded File(s)</span>
+            </button>
+            <button mat-menu-item class="fud-grid-menu-item">
+              <span>Clear Error File(s)</span>
+            </button>
+            <button mat-menu-item class="fud-grid-menu-item" (click)="uploadInstance.clearAllFiles()">
+              <span>Clear All File(s)</span>
+            </button>
+          </mat-menu>
+        </button>
+
+        <button class="primary md"
+                *ngIf="!autoUpload || !uploadInstance?.flow.flowJs?.isUploading()"
+                (click)="uploadInstance.startUpload()"
+                [disabled]="!(uploadInstance?.flow.somethingToUpload$ | async)">Start Upload</button>
+
+        <button class="secondary md"
+                *ngIf="!autoUpload && uploadInstance?.flow.flowJs?.isUploading()"
+                (click)="uploadInstance.pauseUpload()"
+                [disabled]="!(uploadInstance?.flow.somethingToUpload$ | async)"
+                [hidden]="">Pause Upload</button>
+
+      </div>
+
+      <div class="fud-files-grid bp-simple-grid">
+
+        <div class="bp-grid-header">
+          <div class="header-cell fud-name">Name</div>
+          <div class="header-cell fud-extension">Extension</div>
+          <div class="header-cell fud-date-modified">Date Modified</div>
+          <div class="header-cell fud-size">Size</div>
+          <div class="header-cell fud-action">Action</div>
+          <div class="header-cell fud-status">Status</div>
+        </div>
+
+        <div class="bp-grid-body">
+          <div class="bp-grid-row" *ngFor="let transfer of (uploadInstance?.flow.transfers$ | async)?.transfers">
+
+            <div class="bp-body-cell fud-name">{{transfer.name}}</div>
+
+            <div class="bp-body-cell fud-extension">{{transfer.flowFile.getExtension()}}</div>
+
+            <div class="bp-body-cell fud-date-modified">{{getFormattedDate(transfer.flowFile.file.lastModified)}}</div>
+
+            <div class="bp-body-cell fud-size">{{getFormattedSize(transfer.size)}}</div>
+
+            <div class="bp-body-cell fud-action">
+              <span class="fud-grid-icon clickable"
+                    (click)="uploadInstance.removeFile(transfer)"
+                    title="Remove file">Delete</span>
+            </div>
+
+            <div class="bp-body-cell fud-status">
+              <span class="fud-grid-status"
+                    *ngIf="!(transfer.success || transfer.error)">
+                {{transfer.progress | percent}}
+              </span>
+
+              <span class="fud-grid-icon success"
+                    *ngIf="!transfer.flowFile.isUploading() && transfer.flowFile.isComplete() && !transfer.error"
+                    >Success</span>
+
+              <span class="fud-grid-icon error clickable"
+                    *ngIf="!transfer.flowFile.isUploading() && transfer.error"
+                    title="Click to retry upload"
+                    (click)="uploadInstance.retryFile(transfer)">Warning</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

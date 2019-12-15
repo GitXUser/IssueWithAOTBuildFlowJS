@@ -1,0 +1,46 @@
+/** Common Import */
+import {
+  MatToolbarModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatButtonModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatInputModule,
+  MatSelectModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatMenuModule,
+  MatTooltipModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatExpansionModule,
+  MatTabsModule,
+  MatCardModule,
+  MatDividerModule
+} from '@angular/material';
+
+export const MatModules = [
+  MatToolbarModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatButtonModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatInputModule,
+  MatSelectModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatMenuModule,
+  MatTooltipModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatExpansionModule,
+  MatTabsModule,
+  MatCardModule,
+  MatDividerModule
+];

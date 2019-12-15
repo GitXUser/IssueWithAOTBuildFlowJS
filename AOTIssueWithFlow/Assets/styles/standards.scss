@@ -1,0 +1,500 @@
+
+// New CSS Standards by ------------------
+$primary-blue: #006CAA;
+$primary-drk-blue: #004D88;
+$lt-blue: #079CE0;
+$ult-blue: #D8E7F0;
+
+// Colors ---------------------------------
+$primary:#006CAA; /** For h1 tag */
+$gray-dark: #595959; /** For h2, h3 & h4 tags */
+$gray-primary:#A0A0A0;
+$gray: #7f7f7f; /** For Label & Hint */
+$text-primary: #333333; /** For Body */
+$secondary:#56C1FF;
+$white:#FFFFFF;
+$black: #000000;
+
+// Font Sizes ------------------------------
+$font-size-h1: 24px; /** h1 */
+$font-size-h2: 22px; // h2
+$font-size-h3: 20px; // h3
+$font-size-h4: 18px; // h4
+$font-size-base: 16px; /** Body */
+$font-size-xsmall: 11px; // Label & Hint
+
+// Font Weights ----------------------------
+$font-weight-bold: 700;
+$font-weight-regular: 400;
+
+// Line spacing ----------------------------
+$line-height-base:1.25;
+
+//-------------------------------------------------------copied from invision
+$color-primary: #006caa;
+$color-primary-dark: #004D88;
+$color-secondary: #009df7;
+$color-secondary-base: #079CE0;
+$color-secondary-light: #D8E7F0;
+$color-text-dark: #334c5b;
+$color-text-darker: #002033;
+$color-ui-dark: #99a5ad;
+$color-ui-light: #e5e8ea;
+$color-ui-lighter: #F0F3F5;
+$color-ui-lightest: #FFFFFF;
+$color-white: #ffffff;
+$color-ui-highlight: #cce1ee;
+$color-success: #0a982b;
+$color-success-light: #ceead4;
+$color-informational: #2d68b6;
+$color-informational-light: #d5e0f0;
+$color-warning: #ffd022;
+$color-warning-light: #fff5d2;
+$color-danger: #c81e29;
+$color-danger-light: #f4d2d4;
+
+/* Dark Scale*/
+$primary-darkest:#2B3338;
+$primary-darker:#566166;
+$primary-dark:#9AA9B3;
+$primary-light:#D4DADE;
+$primary-lighter:#F0F3F5;
+$primary-lightest:#FFFFFF;
+
+$secondary-sec_darkest:#2D2D2D;
+$secondary-sec_darker:#484848;
+$secondary-sec_dark:#757575;
+
+/* Semantic */
+$success-dark:#0A982B;
+$success-light:#9CE6AC;
+$warning-dark:#FFD022;
+$warning-light:#FFE99E;
+$error-dark:#C81E29;
+$error-light:#F4A1A6;
+$informative-dark:#2D68B6;
+$informative-light:#A6C4F0;
+
+/*
+    Font Styles:
+*/
+
+/* Label font style */
+$font-label-font-size: 12px;
+$font-label-line-height: 16px;
+$font-label-text-align: start;
+$font-label-color: #334c5b;
+$font-label-letter-spacing: 1.5px;
+$font-label-text-transform: uppercase;
+$font-label-font-style: normal;
+$font-label-font-weight: 400;
+$font-label-font-family: Roboto;
+
+@mixin font-label () {
+  font-size: $font-label-font-size;
+  line-height: $font-label-line-height;
+  text-align: $font-label-text-align;
+  color: $font-label-color;
+  letter-spacing: $font-label-letter-spacing;
+  text-transform: $font-label-text-transform;
+  font-style: $font-label-font-style;
+  font-weight: $font-label-font-weight;
+  font-family: $font-label-font-family;
+}
+
+/* Button/Dark font style */
+$font-button-dark-font-size: 14px;
+$font-button-dark-line-height: normal;
+$font-button-dark-text-align: center;
+$font-button-dark-color: #006caa;
+$font-button-dark-letter-spacing: 1.35px;
+$font-button-dark-text-transform: uppercase;
+$font-button-dark-font-style: normal;
+$font-button-dark-font-weight: 500;
+$font-button-dark-font-family: Roboto;
+
+@mixin font-button-dark () {
+  font-size: $font-button-dark-font-size;
+  line-height: $font-button-dark-line-height;
+  text-align: $font-button-dark-text-align;
+  color: $font-button-dark-color;
+  letter-spacing: $font-button-dark-letter-spacing;
+  text-transform: $font-button-dark-text-transform;
+  font-style: $font-button-dark-font-style;
+  font-weight: $font-button-dark-font-weight;
+  font-family: $font-button-dark-font-family;
+}
+
+/* Button/Light font style */
+$font-button-light-font-size: 14px;
+$font-button-light-line-height: normal;
+$font-button-light-text-align: center;
+$font-button-light-color: #ffffff;
+$font-button-light-letter-spacing: 1.35px;
+$font-button-light-text-transform: uppercase;
+$font-button-light-font-style: normal;
+$font-button-light-font-weight: 500;
+$font-button-light-font-family: Roboto;
+
+@mixin font-button-light () {
+  font-size: $font-button-light-font-size;
+  line-height: $font-button-light-line-height;
+  text-align: $font-button-light-text-align;
+  color: $font-button-light-color;
+  letter-spacing: $font-button-light-letter-spacing;
+  text-transform: $font-button-light-text-transform;
+  font-style: $font-button-light-font-style;
+  font-weight: $font-button-light-font-weight;
+  font-family: $font-button-light-font-family;
+}
+
+/* Form Fields font style */
+$font-form-fields-font-size: 14px;
+$font-form-fields-line-height: 20px;
+$font-form-fields-text-align: start;
+$font-form-fields-color: #002033;
+$font-form-fields-letter-spacing: 0.25px;
+$font-form-fields-font-style: normal;
+$font-form-fields-font-weight: 400;
+$font-form-fields-font-family: Roboto;
+
+@mixin font-form-fields () {
+  font-size: $font-form-fields-font-size;
+  line-height: $font-form-fields-line-height;
+  text-align: $font-form-fields-text-align;
+  color: $font-form-fields-color;
+  letter-spacing: $font-form-fields-letter-spacing;
+  font-style: $font-form-fields-font-style;
+  font-weight: $font-form-fields-font-weight;
+  font-family: $font-form-fields-font-family;
+}
+
+/* Body/Normal/1 Line font style */
+$font-body-normal-1-line-font-size: 14px;
+$font-body-normal-1-line-line-height: 16px;
+$font-body-normal-1-line-text-align: start;
+$font-body-normal-1-line-color: #334c5b;
+$font-body-normal-1-line-letter-spacing: 0.47px;
+$font-body-normal-1-line-font-style: normal;
+$font-body-normal-1-line-font-weight: 400;
+$font-body-normal-1-line-font-family: Roboto;
+
+@mixin font-body-normal-1-line () {
+  font-size: $font-body-normal-1-line-font-size;
+  line-height: $font-body-normal-1-line-line-height;
+  text-align: $font-body-normal-1-line-text-align;
+  color: $font-body-normal-1-line-color;
+  letter-spacing: $font-body-normal-1-line-letter-spacing;
+  font-style: $font-body-normal-1-line-font-style;
+  font-weight: $font-body-normal-1-line-font-weight;
+  font-family: $font-body-normal-1-line-font-family;
+}
+
+/* Body/Link font style */
+$font-body-link-font-size: 14px;
+$font-body-link-line-height: 16px;
+$font-body-link-text-align: start;
+$font-body-link-color: #006caa;
+$font-body-link-text-decoration: underline;
+$font-body-link-letter-spacing: 0.47px;
+$font-body-link-font-style: normal;
+$font-body-link-font-weight: 400;
+$font-body-link-font-family: Roboto;
+
+@mixin font-body-link () {
+  font-size: $font-body-link-font-size;
+  line-height: $font-body-link-line-height;
+  text-align: $font-body-link-text-align;
+  color: $font-body-link-color;
+  text-decoration: $font-body-link-text-decoration;
+  letter-spacing: $font-body-link-letter-spacing;
+  font-style: $font-body-link-font-style;
+  font-weight: $font-body-link-font-weight;
+  font-family: $font-body-link-font-family;
+}
+
+/* Data Variable/Normal/1 Line Left font style */
+$font-data-variable-normal-1-line-left-font-size: 16px;
+$font-data-variable-normal-1-line-left-line-height: 24px;
+$font-data-variable-normal-1-line-left-text-align: start;
+$font-data-variable-normal-1-line-left-color: #002033;
+$font-data-variable-normal-1-line-left-letter-spacing: 0.15px;
+$font-data-variable-normal-1-line-left-font-style: normal;
+$font-data-variable-normal-1-line-left-font-weight: 500;
+$font-data-variable-normal-1-line-left-font-family: Roboto;
+
+@mixin font-data-variable-normal-1-line-left () {
+  font-size: $font-data-variable-normal-1-line-left-font-size;
+  line-height: $font-data-variable-normal-1-line-left-line-height;
+  text-align: $font-data-variable-normal-1-line-left-text-align;
+  color: $font-data-variable-normal-1-line-left-color;
+  letter-spacing: $font-data-variable-normal-1-line-left-letter-spacing;
+  font-style: $font-data-variable-normal-1-line-left-font-style;
+  font-weight: $font-data-variable-normal-1-line-left-font-weight;
+  font-family: $font-data-variable-normal-1-line-left-font-family;
+}
+
+/* Data Variable/Link font style */
+$font-data-variable-link-font-size: 16px;
+$font-data-variable-link-line-height: 24px;
+$font-data-variable-link-text-align: start;
+$font-data-variable-link-color: #006caa;
+$font-data-variable-link-text-decoration: underline;
+$font-data-variable-link-letter-spacing: 0.15px;
+$font-data-variable-link-font-style: normal;
+$font-data-variable-link-font-weight: 500;
+$font-data-variable-link-font-family: Roboto;
+
+@mixin font-data-variable-link () {
+  font-size: $font-data-variable-link-font-size;
+  line-height: $font-data-variable-link-line-height;
+  text-align: $font-data-variable-link-text-align;
+  color: $font-data-variable-link-color;
+  text-decoration: $font-data-variable-link-text-decoration;
+  letter-spacing: $font-data-variable-link-letter-spacing;
+  font-style: $font-data-variable-link-font-style;
+  font-weight: $font-data-variable-link-font-weight;
+  font-family: $font-data-variable-link-font-family;
+}
+
+/* Table/Cell/Large font style */
+$font-table-cell-large-font-size: 16px;
+$font-table-cell-large-line-height: 24px;
+$font-table-cell-large-text-align: start;
+$font-table-cell-large-color: #002033;
+$font-table-cell-large-letter-spacing: 0.15px;
+$font-table-cell-large-font-style: normal;
+$font-table-cell-large-font-weight: 400;
+$font-table-cell-large-font-family: Roboto;
+
+@mixin font-table-cell-large () {
+  font-size: $font-table-cell-large-font-size;
+  line-height: $font-table-cell-large-line-height;
+  text-align: $font-table-cell-large-text-align;
+  color: $font-table-cell-large-color;
+  letter-spacing: $font-table-cell-large-letter-spacing;
+  font-style: $font-table-cell-large-font-style;
+  font-weight: $font-table-cell-large-font-weight;
+  font-family: $font-table-cell-large-font-family;
+}
+
+/* Table/Link font style */
+$font-table-link-font-size: 16px;
+$font-table-link-line-height: 24px;
+$font-table-link-text-align: start;
+$font-table-link-color: #006caa;
+$font-table-link-text-decoration: underline;
+$font-table-link-letter-spacing: 0.15px;
+$font-table-link-font-style: normal;
+$font-table-link-font-weight: 400;
+$font-table-link-font-family: Roboto;
+
+@mixin font-table-link () {
+  font-size: $font-table-link-font-size;
+  line-height: $font-table-link-line-height;
+  text-align: $font-table-link-text-align;
+  color: $font-table-link-color;
+  text-decoration: $font-table-link-text-decoration;
+  letter-spacing: $font-table-link-letter-spacing;
+  font-style: $font-table-link-font-style;
+  font-weight: $font-table-link-font-weight;
+  font-family: $font-table-link-font-family;
+}
+
+/* Header/Small font style */
+$font-header-small-font-size: 16px;
+$font-header-small-line-height: 24px;
+$font-header-small-text-align: start;
+$font-header-small-color: #334c5b;
+$font-header-small-letter-spacing: 0.15px;
+$font-header-small-font-style: normal;
+$font-header-small-font-weight: 400;
+$font-header-small-font-family: Roboto;
+
+@mixin font-header-small () {
+  font-size: $font-header-small-font-size;
+  line-height: $font-header-small-line-height;
+  text-align: $font-header-small-text-align;
+  color: $font-header-small-color;
+  letter-spacing: $font-header-small-letter-spacing;
+  font-style: $font-header-small-font-style;
+  font-weight: $font-header-small-font-weight;
+  font-family: $font-header-small-font-family;
+}
+
+/* Status font style */
+$font-status-font-size: 20px;
+$font-status-line-height: normal;
+$font-status-text-align: right;
+$font-status-color: #002033;
+$font-status-letter-spacing: 0.15px;
+$font-status-font-style: normal;
+$font-status-font-weight: 500;
+$font-status-font-family: Roboto;
+
+@mixin font-status () {
+  font-size: $font-status-font-size;
+  line-height: $font-status-line-height;
+  text-align: $font-status-text-align;
+  color: $font-status-color;
+  letter-spacing: $font-status-letter-spacing;
+  font-style: $font-status-font-style;
+  font-weight: $font-status-font-weight;
+  font-family: $font-status-font-family;
+}
+
+/* Tab/Active font style */
+$font-tab-active-font-size: 20px;
+$font-tab-active-line-height: normal;
+$font-tab-active-text-align: center;
+$font-tab-active-color: #006caa;
+$font-tab-active-letter-spacing: 0.15px;
+$font-tab-active-font-style: normal;
+$font-tab-active-font-weight: 500;
+$font-tab-active-font-family: Roboto;
+
+@mixin font-tab-active () {
+  font-size: $font-tab-active-font-size;
+  line-height: $font-tab-active-line-height;
+  text-align: $font-tab-active-text-align;
+  color: $font-tab-active-color;
+  letter-spacing: $font-tab-active-letter-spacing;
+  font-style: $font-tab-active-font-style;
+  font-weight: $font-tab-active-font-weight;
+  font-family: $font-tab-active-font-family;
+}
+
+/* Tab/Normal font style */
+$font-tab-normal-font-size: 20px;
+$font-tab-normal-line-height: normal;
+$font-tab-normal-text-align: center;
+$font-tab-normal-color: #99a5ad;
+$font-tab-normal-letter-spacing: 0.15px;
+$font-tab-normal-font-style: normal;
+$font-tab-normal-font-weight: 500;
+$font-tab-normal-font-family: Roboto;
+
+@mixin font-tab-normal () {
+  font-size: $font-tab-normal-font-size;
+  line-height: $font-tab-normal-line-height;
+  text-align: $font-tab-normal-text-align;
+  color: $font-tab-normal-color;
+  letter-spacing: $font-tab-normal-letter-spacing;
+  font-style: $font-tab-normal-font-style;
+  font-weight: $font-tab-normal-font-weight;
+  font-family: $font-tab-normal-font-family;
+}
+
+/* Header/Large font style */
+$font-header-large-font-size: 24px;
+$font-header-large-line-height: normal;
+$font-header-large-text-align: left;
+$font-header-large-color: #334c5b;
+$font-header-large-font-style: normal;
+$font-header-large-font-weight: 400;
+$font-header-large-font-family: Roboto;
+
+@mixin font-header-large () {
+  font-size: $font-header-large-font-size;
+  line-height: $font-header-large-line-height;
+  text-align: $font-header-large-text-align;
+  color: $font-header-large-color;
+  font-style: $font-header-large-font-style;
+  font-weight: $font-header-large-font-weight;
+  font-family: $font-header-large-font-family;
+}
+
+/* Body/Normal/2 Lines font style */
+$font-body-normal-2-lines-font-size: 14px;
+$font-body-normal-2-lines-line-height: 16px;
+$font-body-normal-2-lines-text-align: start;
+$font-body-normal-2-lines-color: #334c5b;
+$font-body-normal-2-lines-letter-spacing: 0.47px;
+$font-body-normal-2-lines-font-style: normal;
+$font-body-normal-2-lines-font-weight: 400;
+$font-body-normal-2-lines-font-family: Roboto;
+
+@mixin font-body-normal-2-lines () {
+  font-size: $font-body-normal-2-lines-font-size;
+  line-height: $font-body-normal-2-lines-line-height;
+  text-align: $font-body-normal-2-lines-text-align;
+  color: $font-body-normal-2-lines-color;
+  letter-spacing: $font-body-normal-2-lines-letter-spacing;
+  font-style: $font-body-normal-2-lines-font-style;
+  font-weight: $font-body-normal-2-lines-font-weight;
+  font-family: $font-body-normal-2-lines-font-family;
+}
+
+/* Data Variable/Normal/2 Line Right font style */
+$font-data-variable-normal-2-line-right-font-size: 16px;
+$font-data-variable-normal-2-line-right-line-height: 24px;
+$font-data-variable-normal-2-line-right-text-align: right;
+$font-data-variable-normal-2-line-right-color: #002033;
+$font-data-variable-normal-2-line-right-letter-spacing: 0.15px;
+$font-data-variable-normal-2-line-right-font-style: normal;
+$font-data-variable-normal-2-line-right-font-weight: 500;
+$font-data-variable-normal-2-line-right-font-family: Roboto;
+
+@mixin font-data-variable-normal-2-line-right () {
+  font-size: $font-data-variable-normal-2-line-right-font-size;
+  line-height: $font-data-variable-normal-2-line-right-line-height;
+  text-align: $font-data-variable-normal-2-line-right-text-align;
+  color: $font-data-variable-normal-2-line-right-color;
+  letter-spacing: $font-data-variable-normal-2-line-right-letter-spacing;
+  font-style: $font-data-variable-normal-2-line-right-font-style;
+  font-weight: $font-data-variable-normal-2-line-right-font-weight;
+  font-family: $font-data-variable-normal-2-line-right-font-family;
+}
+
+/* Table/Cell/Small font style */
+$font-table-cell-small-font-size: 14px;
+$font-table-cell-small-line-height: 16px;
+$font-table-cell-small-text-align: start;
+$font-table-cell-small-color: #002033;
+$font-table-cell-small-letter-spacing: 0.47px;
+$font-table-cell-small-font-style: normal;
+$font-table-cell-small-font-weight: 400;
+$font-table-cell-small-font-family: Roboto;
+
+@mixin font-table-cell-small () {
+  font-size: $font-table-cell-small-font-size;
+  line-height: $font-table-cell-small-line-height;
+  text-align: $font-table-cell-small-text-align;
+  color: $font-table-cell-small-color;
+  letter-spacing: $font-table-cell-small-letter-spacing;
+  font-style: $font-table-cell-small-font-style;
+  font-weight: $font-table-cell-small-font-weight;
+  font-family: $font-table-cell-small-font-family;
+}
+
+/* Table/Cell/Small/Link font style */
+$font-table-cell-small-link-font-size: 14px;
+$font-table-cell-small-link-line-height: 16px;
+$font-table-cell-small-link-text-align: start;
+$font-table-cell-small-link-color: #006caa;
+$font-table-cell-small-link-text-decoration: underline;
+$font-table-cell-small-link-letter-spacing: 0.47px;
+$font-table-cell-small-link-font-style: normal;
+$font-table-cell-small-link-font-weight: 400;
+$font-table-cell-small-link-font-family: Roboto;
+
+@mixin font-table-cell-small-link () {
+  font-size: $font-table-cell-small-link-font-size;
+  line-height: $font-table-cell-small-link-line-height;
+  text-align: $font-table-cell-small-link-text-align;
+  color: $font-table-cell-small-link-color;
+  text-decoration: $font-table-cell-small-link-text-decoration;
+  letter-spacing: $font-table-cell-small-link-letter-spacing;
+  font-style: $font-table-cell-small-link-font-style;
+  font-weight: $font-table-cell-small-link-font-weight;
+  font-family: $font-table-cell-small-link-font-family;
+}
+
+
+
+$active-color: #079CE0;
+$enabled-color: #006CAA;
+$hover-color: #0384C5;
+$disabled-color: #D4DADE;
+$disabled-text: #9AA9B3;
+$hover-shadow: rgba(1, 51, 77, 0.4);

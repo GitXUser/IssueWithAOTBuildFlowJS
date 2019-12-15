@@ -1,0 +1,25 @@
+<div class="app-container">
+
+  <div  class="dynamic-width-wrapper">
+
+
+    <div class="adjusting-width-container" fxLayout="column">
+
+     <!-- <a> <div (click)="navigateToFeatureX()">Click navigate to Feature X</div></a> -->
+
+      <div class="overflow-wrapper" fxFlex="calc(100% - 25px)">
+        <div class="route-container">
+
+          <router-outlet></router-outlet>
+
+        </div>
+
+        <footer>Footer</footer>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

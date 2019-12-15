@@ -1,0 +1,146 @@
+@import 'standards';
+
+.file-upload-container{
+  margin:10px;
+  height: 100%;
+}
+
+.drop-area {
+  color: $primary-darkest;
+  border:1px dashed #ccc;
+  border-width: 3px;
+  padding: 15px 10px;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  transition-duration: .25s;
+}
+
+.drop-area.highlight {
+  border-color: $primary-blue;
+}
+
+.fud-drop-content {
+  position: absolute;
+  margin: auto;
+  left: calc(50% - 125px);
+  top: calc(50% - 40px);
+  width: 250px;
+  transition-duration: 0.5s;
+  text-align: center;
+  z-index: 2;
+
+  span {
+    color: $color-ui-dark;
+    font-size: 22px;
+    line-height: 16px;
+  }
+
+  .fud-or {
+    margin: 8px 0;
+    color: $color-ui-dark;
+  }
+
+  .fud-browse-button {
+    input {
+      display: none;
+    }
+  }
+}
+
+.hide-droparea-text {
+  .fud-drop-content > *:not(.fud-browse-button) {
+    display: none;
+  }
+
+  .fud-drop-content {
+    top: 15px;
+    left: 130px;
+    right: auto;
+    width: 125px;
+  }
+}
+
+.fud-files-content {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+
+  .fud-action-bar {
+    height: 45px;
+    text-align: right;
+
+    label {
+      float: left;
+      line-height: 31.2px;
+    }
+
+    button {
+      margin-left: 15px;
+    }
+  }
+
+  .fud-files-grid {
+    border: 1px solid $color-ui-light;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: calc(100% - 50px);
+    overflow: auto;
+
+    .fud-name {
+      width: 35%;
+    }
+
+    .fud-extension,
+    .fud-size,
+    .fud-date-modified {
+      width: 15%;
+    }
+
+    .fud-action,
+    .fud-status {
+      width: 10%;
+      text-align: center !important;
+    }
+
+
+    .bp-grid-row:hover {
+      background-color: $color-ui-light;
+    }
+
+    .fud-grid-icon ::ng-deep .bpi-icon {
+      font-size: 20px;
+      padding: 0;
+      vertical-align: middle;
+    }
+
+    .fud-grid-icon.success ::ng-deep .bpi-icon::before {
+      color: green;
+    }
+
+    .fud-grid-icon.error {
+      cursor: pointer;
+
+      ::ng-deep .bpi-icon::before {
+        color: $error-dark;
+      }
+    }
+
+    .fud-grid-icon.clickable:hover {
+      color: $lt-blue;
+      cursor: pointer;
+
+      ::ng-deep .bpi-icon::before {
+        color: $lt-blue;
+      }
+    }
+  }
+}
+
+.fud-grid-menu-item {
+  text-transform: none;
+  font-size: 12px;
+  height: 36px;
+  line-height: 36px;
+  font: 400 13.3333px Arial;
+}
